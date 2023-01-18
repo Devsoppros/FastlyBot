@@ -18,7 +18,7 @@ async def cwf1(_, m):
         XD[m.chat.id] = 1
     else:
         XD[m.chat.id] += 1
-    if await get_chat_limit(m.chat.id) != XD[m.chat.id]:
+    if 10 != XD[m.chat.id]:
         return
     XD[m.chat.id] = 0
     text = random.choice(WORDS)
