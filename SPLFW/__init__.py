@@ -1,4 +1,6 @@
 from hlpl_english_words import english_words
+import requests
+from config import BACKGROUND_URL
 
 case=['adjective','adverb','noun-singular','noun-plural','verb','article']
 
@@ -10,3 +12,8 @@ def load_words():
         for red in english_words.get(mad):
             if len(red) >= 7:
                 WORDS.append(red)
+
+def load_bg():
+    img_data = requests.get(image_url).content
+    with open('bg.png', 'wb') as handler:
+        handler.write(img_data)
