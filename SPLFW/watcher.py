@@ -3,17 +3,20 @@ import time
 from SPLFW.Database.limit import get_chat_limit
 
 XD = {}
-a = 0
+info = {}
 @Client.on_message(group=1)
 async def cwf1(_, m):
-    global XD, a
+    global XD, info 
     if not m.from_user:
         return
     if not m.from_user.id:
         return
-    a += 1
-    XD[m.chat.id] = a
-    if await get_chat_limit(m.chat.id) != a:
+    if not m.chat.id in XD:
+        XD[m.chat.id] = 1
+    else:
+        XD[m.chat.id] += 1
+    if await get_chat_limit(m.chat.id) != XD[m.chat.id]:
         return
-    a = 0
+    XD[m.chat.id] = 0
+    
     
