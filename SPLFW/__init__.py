@@ -1,6 +1,6 @@
 from hlpl_english_words import english_words
 import requests
-from config import BACKGROUND_URL
+from config import BACKGROUND_URL as image_url
 
 case=['adjective','adverb','noun-singular','noun-plural','verb','article']
 
