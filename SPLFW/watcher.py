@@ -23,8 +23,8 @@ async def cwf1(_, m):
     XD[m.chat.id] = 0
     text = random.choice(WORDS)
     img = create_image(text)
-    info[m.chat.id] = [True, text]
     await _.send_photo(img, caption="Write the word !")
+    info[m.chat.id] = [True, text]
 
 @Client.on_message(filters.group, group=2)
 async def cwf2(_, m):
@@ -32,8 +32,6 @@ async def cwf2(_, m):
     if not m.chat.id in info:
         return
     if not info[m.chat.id][0]:
-        return
-    if len(m.command) != 1:
         return
     if m.text.lower() != info[m.chat.id][1].lower():
         return
