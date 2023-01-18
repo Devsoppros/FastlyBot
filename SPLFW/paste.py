@@ -1,8 +1,9 @@
 from PIL import Image, ImageDraw, ImageFont
 
-def create_image(path, text):
+def create_image(text):
+    path = 
     im = Image.open(path)
-    font = ImageFont.truetype("./Fonts/test2.ttf", 30)
+    font = ImageFont.truetype("./Fonts/font2.ttf", 30)
     draw = ImageDraw.Draw(im)
     w, h = draw.textsize(text, font)
     W, H = im.size
