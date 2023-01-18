@@ -10,3 +10,6 @@ def create_image(path, text):
     w, h = draw.textsize(text, font)
     W, H = im.size
     coord = ((W-w)/2, (H-h)/2)
+    draw.text(coord, text, fill="white", font=font)
+    im.save("splfw.png")
+    return "splfw.png"
