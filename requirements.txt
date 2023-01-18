@@ -4,3 +4,4 @@ motor
 pymongo[srv]
 hlpl-english-words
 pillow
+requests 
