@@ -7,4 +7,6 @@ def create_image(path, text):
     font = ImageFont.truetype("./Fonts/test2.ttf", 30)
     draw = ImageDraw.Draw(im)
     text = random.choice(WORDS)
-    
+    w, h = draw.textsize(text, font)
+    W, H = im.size
+    coord = ((W-w)/2, (H-h)/2)
