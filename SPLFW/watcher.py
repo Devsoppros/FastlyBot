@@ -23,7 +23,7 @@ async def cwf1(_, m):
     XD[m.chat.id] = 0
     text = random.choice(WORDS)
     img = create_image(text)
-    await _.send_photo("splfw.png", caption="Write the word !")
+    await _.send_photo("splfw.jpg", caption="Write the word !")
     info[m.chat.id] = [True, text]
 
 @Client.on_message(filters.group, group=2)
