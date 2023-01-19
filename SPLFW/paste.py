@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 
 def create_image(text):
-    path = "bg.png"
+    path = "bg.jpg"
     im = Image.open(path)
     font = ImageFont.truetype("./Fonts/font2.ttf", 30)
     draw = ImageDraw.Draw(im)
