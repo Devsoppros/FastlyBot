@@ -15,5 +15,5 @@ def load_words():
 
 def load_bg():
     img_data = requests.get(image_url).content
-    with open('bg.png', 'wb') as handler:
+    with open('bg.jpg', 'wb') as handler:
         handler.write(img_data)
